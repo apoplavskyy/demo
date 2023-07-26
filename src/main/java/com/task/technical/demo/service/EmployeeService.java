@@ -3,9 +3,8 @@ package com.task.technical.demo.service;
 import com.task.technical.demo.entity.Employee;
 import com.task.technical.demo.repository.EmployeeRepository;
 import com.task.technical.demo.utils.ScanConfig;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,13 +16,11 @@ import java.util.stream.Collectors;
 
 @Service("dataService")
 @Log4j2
-@Getter
+@AllArgsConstructor
 public class EmployeeService {
 
-    @Autowired
     private EmployeeRepository employeeRepository;
 
-    @Autowired
     private ScanConfig scanConfig;
 
     public Optional<Employee> getEmployee(Long id) {
