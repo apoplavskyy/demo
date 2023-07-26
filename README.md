@@ -77,16 +77,16 @@ you can increase depth in case of big company
 http://localhost:8000/h2-console/  (sa/password)
 ```
 insert into employee (name, salary) values ('Alex', 1000);
-insert into employee (name, salary, superior_id) values ('Anna', 1000, 1);
-insert into employee (name, salary, superior_id) values ('Rein', 1000, 1);
-insert into employee (name, salary, superior_id) values ('Michael', 1000, 3);
-insert into employee (name, salary, superior_id) values ('Kristin', 1000, 3);
+insert into employee (name, salary, superior) values ('Anna', 1000, 1);
+insert into employee (name, salary, superior) values ('Rein', 1000, 1);
+insert into employee (name, salary, superior) values ('Michael', 1000, 3);
+insert into employee (name, salary, superior) values ('Kristin', 1000, 3);
 
-insert into employee (name, salary, superior_id) values ('test51', 100, 5);
-insert into employee (name, salary, superior_id) values ('test52', 100, 5);
+insert into employee (name, salary, superior) values ('test51', 100, 5);
+insert into employee (name, salary, superior) values ('test52', 100, 5);
 
-insert into employee (name, salary, superior_id) values ('test71', 100, 7);
-insert into employee (name, salary, superior_id) values ('test72', 100, 7);
+insert into employee (name, salary, superior) values ('test71', 100, 7);
+insert into employee (name, salary, superior) values ('test72', 100, 7);
 ```
 
 #### REST ####
