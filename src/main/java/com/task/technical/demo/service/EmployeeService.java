@@ -6,7 +6,6 @@ import com.task.technical.demo.utils.ScanConfig;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -40,6 +39,7 @@ public class EmployeeService {
     }
 
     public Long salarySumAllSubordinatesOfEmployee(Long id) {
+        // TODO use logs!!!
 
         List<Long> directSubordinatesOf = Arrays.asList(id);
         List<Long> subordinatesAll = new ArrayList<>();
@@ -53,6 +53,8 @@ public class EmployeeService {
 
         } while (!directSubordinatesOf.isEmpty() && limit < scanConfig.getDepth());
 
+        // TODO Throw clear exception to change limit if limit reached but it still has Subordinates
+
         return salarySumEmployees(subordinatesAll);
     }
 
@@ -65,6 +67,9 @@ public class EmployeeService {
     }
 
     public Employee save(Employee newEmployee) {
+
+        // TODO check if boss exists and cycling links  -> clear exception
+
         return employeeRepository.save(newEmployee);
     }
 }

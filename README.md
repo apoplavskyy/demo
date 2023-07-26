@@ -26,6 +26,8 @@ to run with H2 database profile : ". ./run.sh"
 
 H2 console: http://localhost:8000/h2-console/  (sa/password)
 
+swagger http://localhost:8000/swagger-ui.html
+
 ## Configuration files ##
 
 #### Shared: Property file ####
