@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/1")
+@RequestMapping("/api/1")
 @Log4j2
 @AllArgsConstructor
 public class EmployeeController {
