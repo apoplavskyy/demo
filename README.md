@@ -8,8 +8,8 @@ Each employee has a name, unique code, and salary. Some employees might have sub
 The app should be able to save a single employee or several, retrieve a single or several, and get a salary sum of all subordinates of a given employee.
 Like we have employee Alex, with 2 subordinates Anna and Rein. Rein also has 2 subordinates, Michael and Kristin.
 - Alex
- - Anna (1000 eur)
- - Rein (1000 eur)
+   - Anna (1000 eur)
+   - Rein (1000 eur)
       - Michael (1000 eur)
       - Kristin (1000 eur)
 
@@ -22,7 +22,7 @@ Ship the code on Git Hub.
 
 to package: "mvn package"
 
-to run with H2 database profile : ". ./run.sh" 
+to run on local env with H2 database profile : ". ./run.sh" 
 
 H2 console: http://localhost:8000/h2-console/  (sa/password)
 
@@ -109,4 +109,34 @@ list by ids: http://localhost:8000/api/1/employee/ids?id=1,2
 salary sum of all subordinates of a given employee 
 http://localhost:8000/api/1/employee/1/statistic
 
+```
+
+#### HOW TO RUN in DOCKER ####
+
+to build image
+
+execute in project folder
+```
+docker image build . -t demo-backend:1.0.0
+```
+
+to run image
+```
+docker network create demo-network
+
+docker run -dit -p 80:8000 --name backend --network demo-network demo-backend:1.0.0
+
+```
+
+check http://localhost/api/1/employee/
+
+to stop
+```
+docker ps
+docker container stop <demo-backend:1.0.0 container ID from prev command aoutput>
+```
+
+to delete image
+```
+docker rmi demo-backend:1.0.0 --force
 ```
