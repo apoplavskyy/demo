@@ -4,6 +4,7 @@ import com.task.technical.demo.entity.Employee;
 import com.task.technical.demo.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,8 +43,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee")
-    Employee createNewAddress(@RequestBody Employee newEmployee) {
-        return employeeService.save(newEmployee);
+    ResponseEntity<Employee>  createNewEmployee(@RequestBody Employee newEmployee) {
+        return new ResponseEntity<>(employeeService.save(newEmployee), HttpStatus.CREATED);
     }
 
 }
