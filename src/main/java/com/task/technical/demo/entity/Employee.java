@@ -12,7 +12,7 @@ import java.util.List;
 @lombok.Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee implements Serializable {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
